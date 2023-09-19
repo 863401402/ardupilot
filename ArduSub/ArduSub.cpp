@@ -367,11 +367,11 @@ void Sub::three_hz_loop()
 // one_hz_loop - runs at 1Hz 每秒运行一次
 void Sub::one_hz_loop()
 {
-    bool arm_check = arming.pre_arm_checks(false);  // 执行预飞行检查，并获取是否成功的标志
-    ap.pre_arm_check = arm_check; // 更新AP系统的预飞行检查状态
-    AP_Notify::flags.pre_arm_check = arm_check; // 更新通知模块的预飞行检查状态
+    bool arm_check = arming.pre_arm_checks(false);      // 执行预飞行检查，并获取是否成功的标志
+    ap.pre_arm_check = arm_check;                       // 更新AP系统的预飞行检查状态
+    AP_Notify::flags.pre_arm_check = arm_check;         // 更新通知模块的预飞行检查状态
     AP_Notify::flags.pre_arm_gps_check = position_ok(); // 更新通知模块的GPS状态
-    AP_Notify::flags.flying = motors.armed(); // 更新通知模块的飞行状态
+    AP_Notify::flags.flying = motors.armed();           // 更新通知模块的飞行状态
 
     if (should_log(MASK_LOG_ANY)) {
         Log_Write_Data(LogDataID::AP_STATE, ap.value);  // 记录AP系统的状态数据
