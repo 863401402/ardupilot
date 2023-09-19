@@ -188,11 +188,9 @@ void Sub::fast_loop()
     motors_output();
 
     // 运行EKF状态估计器（计算成本较高） run EKF state estimator (expensive)
-    // --------------------
     read_AHRS();
 
     // 惯性导航 Inertial Nav
-    // --------------------
     read_inertia();
 
     // 检查EKF是否已重置目标航向 check if ekf has reset target heading
