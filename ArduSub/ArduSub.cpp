@@ -172,7 +172,6 @@ void Sub::get_scheduler_tasks(const AP_Scheduler::Task *&tasks,
 // Sub类中的失败安全（failsafe）优先级数组
 constexpr int8_t Sub::_failsafe_priorities[5];
 
-
 // Main loop - 400hz 主循环
 void Sub::fast_loop()
 {
